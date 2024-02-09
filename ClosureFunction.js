@@ -1,0 +1,62 @@
+﻿function outer(a) {
+    document.write("outer() function called <br/>");
+
+    function inner(b) {
+        document.write("inner() function called  <br/>");
+        return a + b;
+    }
+
+    //inner();
+
+    //return inner();
+
+    //return inner; 
+
+    return inner(a)
+}
+
+
+//outer();
+
+//var result = outer();  // not defined
+
+//var result = outer()();   // undefined
+
+//var result = outer(5)(5);
+
+var result = outer(5);
+
+document.write(`Returned Result : ${result} <br/>`);
+
+
+
+
+//multiply (2,3,4)==>24;;
+
+function multiply(a, b, c) {
+    return a * b * c;
+}
+
+result = multiply(2, 3, 4);
+document.write(`multiply (2,3,4) Result : ${result} <br/>`);
+
+
+
+//multiplya(2)
+//multiplyb(3)
+//multiply(4)     --> o/p==24
+
+
+function multiplya(a) {
+    function multiplyb(b) {
+        function multiplyc(c) {
+            return a * b * c;
+        }
+        return multiplyc;
+    }
+    return multiplyb;
+}
+result = multiplya(2)(3)(4);
+
+document.write(`multiply (2),multiply (3), multiply (4) Result : ${result} <br/>`);
+
